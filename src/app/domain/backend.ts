@@ -23,6 +23,7 @@ export interface PersonDto {
   firstName: string;
   lastName: string;
   businessName?: string;
+  phone?: string;
 }
 
 export interface WorkshopDto {

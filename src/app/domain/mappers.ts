@@ -70,6 +70,7 @@ export function toWorkOrder(o: WorkOrderDto, refs: Refs): WorkOrder {
     plate: refs.vehicle?.plateNumber ?? '—',
     vehicle: vehicleLabel(refs.vehicle),
     customer: fullName(refs.customer),
+    customerPhone: refs.customer?.phone,
     mileageKm: o.mileageIn ?? undefined,
     status: toOrderStatus(o.status),
     createdAt: o.createdAt,
