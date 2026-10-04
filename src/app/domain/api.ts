@@ -96,7 +96,7 @@ export class WorkOrdersApi {
           map((views) =>
             orders.flatMap((dto, i) =>
               dto.tasks
-                .filter((t) => t.assignedMechanicId === this.auth.profile()?.employeeId)
+                .filter((t) => t.assignedMechanicId === this.auth.profile()?.registrationId)
                 .map((t) => toTaskView(t.id, views[i])),
             ),
           ),

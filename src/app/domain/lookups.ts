@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, catchError, forkJoin, map, of, shareReplay, switchMap } from 'rxjs';
 import { API_BASE } from '../core/config';
-import { PersonDto, ProductDto, VehicleDto, WorkOrderDto } from './backend';
+import { EmployeeRegistrationDto, PersonDto, ProductDto, VehicleDto, WorkOrderDto } from './backend';
 import { toWorkOrder } from './mappers';
 import { WorkOrder } from './models';
 
@@ -36,6 +36,12 @@ export class Lookups {
   customer = (id: string) => this.get<PersonDto>(`/customers/${id}`);
   employee = (id: string) => this.get<PersonDto>(`/employees/${id}`);
 
+  /** A task's assignedMechanicId is an employee registration; resolve it to the employee's person record. */
+  mechanic = (registrationId: string): Observable<PersonDto | null> =>
+    this.get<EmployeeRegistrationDto>(`/employee-registrations/${registrationId}`).pipe(
+      switchMap((reg) => (reg ? this.employee(reg.employeeId) : of(null))),
+    );
+
   /** Products of a branch by id, for naming the parts used in a task. */
   products(branchId: string): Observable<Map<string, ProductDto>> {
     return this.get<ProductDto[]>('/inventory/products', { branchId }).pipe(
@@ -59,7 +65,7 @@ export class Lookups {
       customers: this.resolve(orders.map((o) => o.customerId), this.customer),
       employees: this.resolve(
         orders.flatMap((o) => o.tasks.map((t) => t.assignedMechanicId)),
-        this.employee,
+        this.mechanic,
       ),
       products: orders.some((o) => o.tasks.some((t) => t.products?.length)) ? this.products(branchId) : of(new Map<string, ProductDto>()),
     }).pipe(
