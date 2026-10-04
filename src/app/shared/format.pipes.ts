@@ -23,6 +23,8 @@ export class WhenPipe implements PipeTransform {
   private readonly lang = inject(LanguageService).lang;
 
   transform(iso: string): string {
+    // Some backend resources carry no date; an empty or invalid value reads as a dash instead of throwing.
+    if (!iso || Number.isNaN(new Date(iso).getTime())) return '—';
     return new Intl.DateTimeFormat(LOCALE[this.lang()], {
       day: 'numeric',
       month: 'short',
