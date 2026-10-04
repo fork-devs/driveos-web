@@ -27,6 +27,10 @@ export interface Profile {
   role: Role;
   tenantId: string;
   workshopName: string;
+  /** Workshop that owns the branches this user can see (real backend only). */
+  workshopId?: string;
+  /** Core employee id, used to pick the technician's own tasks (real backend only). */
+  employeeId?: string;
   currentBranch?: Branch;
 }
 
