@@ -117,7 +117,7 @@ interface NavLink {
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--c-primary);
+      color: var(--c-primary-text);
     }
 
     .links { display: flex; align-items: center; gap: 24px; margin-inline: auto; }

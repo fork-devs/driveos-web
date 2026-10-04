@@ -58,7 +58,7 @@ gsap.registerPlugin(ScrollTrigger);
       overflow: hidden;
     }
 
-    h2 { font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 800; letter-spacing: -0.04em; }
+    h2 { font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 800; letter-spacing: -0.04em; color: inherit; }
 
     .track {
       display: flex;
@@ -91,7 +91,7 @@ gsap.registerPlugin(ScrollTrigger);
       font-size: 1.7rem;
     }
 
-    h3 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.03em; }
+    h3 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.03em; color: inherit; }
 
     .step p { color: var(--inverse-muted); }
 

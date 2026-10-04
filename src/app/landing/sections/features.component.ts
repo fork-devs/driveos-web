@@ -63,7 +63,7 @@ interface Cell {
 
     .cell > i { font-size: 2.2rem; }
 
-    h3 { font-size: clamp(1.4rem, 2vw, 1.9rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
+    h3 { font-size: clamp(1.4rem, 2vw, 1.9rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; color: inherit; }
 
     .body { max-width: 40ch; }
 

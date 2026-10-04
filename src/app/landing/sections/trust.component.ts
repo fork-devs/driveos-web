@@ -39,6 +39,7 @@ import { RevealDirective } from '../../shared/reveal.directive';
       font-size: clamp(2.2rem, 5vw, 4.2rem);
       font-weight: 800;
       letter-spacing: -0.04em;
+      color: inherit;
       margin-bottom: clamp(32px, 5vw, 64px);
     }
 
@@ -62,7 +63,7 @@ import { RevealDirective } from '../../shared/reveal.directive';
       color: var(--c-primary-soft);
     }
 
-    h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; }
+    h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; color: inherit; }
 
     .label p { color: var(--inverse-muted); max-width: 46ch; }
 

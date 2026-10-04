@@ -24,6 +24,14 @@ html[data-theme="light"] {
   --c-green: #00d756;
   --c-purple: #8b5cf6;
   --c-white: #ffffff;
+  --c-black: #0b0d12;
+  --c-surface-white: #ffffff;
+  --inverse-bg: #10131a;
+  --inverse-fg: #f8fafc;
+  --inverse-muted: #a7b3c6;
+  --inverse-line: rgba(255, 255, 255, 0.14);
+  --c-red-text: #b91c1c;
+  --c-primary-text: #0071eb;
 
   /* Semantic Tokens (Light Theme: Soothing Warm Paper Light, not harsh white) */
   --bg: #f3f5f9;
@@ -89,6 +97,8 @@ html[data-theme="dark"] {
   --on-primary: #ffffff;
   --focus: #38bdf8;
   --link: #38bdf8;
+  --c-red-text: #f87171;
+  --c-primary-text: #4da3ff;
 
   --shadow-artifact: 0 0 0 1px rgba(255, 255, 255, 0.07), 0 20px 25px -5px rgba(0, 0, 0, 0.5);
   --shadow-popover: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 16px 36px rgba(0, 0, 0, 0.65);
@@ -120,6 +130,8 @@ html[data-theme="dark"] {
     --on-primary: #ffffff;
     --focus: #38bdf8;
     --link: #38bdf8;
+    --c-red-text: #f87171;
+    --c-primary-text: #4da3ff;
 
     --shadow-artifact: 0 0 0 1px rgba(255, 255, 255, 0.07), 0 20px 25px -5px rgba(0, 0, 0, 0.5);
     --shadow-popover: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 16px 36px rgba(0, 0, 0, 0.65);

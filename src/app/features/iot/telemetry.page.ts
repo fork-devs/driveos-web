@@ -177,7 +177,7 @@ interface Gauge {
         font-family: monospace;
         font-weight: 800;
         font-size: 1.1rem;
-        color: #b91c1c; /* Safe WCAG red for text */
+        color: var(--c-red-text); /* WCAG AA red for text, per theme */
       }
 
       .dtc-desc {
@@ -238,7 +238,7 @@ interface Gauge {
               </div>
               @if (v.activeDtcs.length > 0) {
                 <div style="margin-top: 8px;">
-                  <app-badge value="critical"></app-badge> <span style="font-size: 0.8rem; font-weight: 600; margin-left: 4px; color: var(--c-red);">{{ v.activeDtcs.length }} DTC</span>
+                  <app-badge value="critical"></app-badge> <span style="font-size: 0.8rem; font-weight: 600; margin-left: 4px; color: var(--c-red-text);">{{ v.activeDtcs.length }} DTC</span>
                 </div>
               }
             </mat-card>
