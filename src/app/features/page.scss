@@ -1,0 +1,40 @@
+/* Shared look of signed-in screens. Imported with styleUrl by each page. */
+:host { display: block; }
+
+.head { display: grid; gap: 6px; margin-bottom: clamp(20px, 3vw, 32px); }
+
+h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.04em; }
+.head p { color: var(--muted); }
+
+h2 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
+
+.card {
+  padding: clamp(18px, 2.4vw, 26px);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  background: var(--card);
+}
+
+.muted { color: var(--muted); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+.chip {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.chip:hover { border-color: var(--fg); }
+.chip[aria-pressed='true'] { background: var(--c-primary); border-color: var(--c-primary); color: var(--c-white); }
+
+.btn-small { min-height: 40px; padding: 0 18px; font-size: 0.92rem; }
+
+.btn[disabled] { opacity: 0.6; cursor: progress; }
+
+.num { font-variant-numeric: tabular-nums; }
