@@ -31,6 +31,8 @@ export interface Profile {
   workshopId?: string;
   /** Core employee id, used to pick the technician's own tasks (real backend only). */
   employeeId?: string;
+  /** Employee registration id (employee in a branch): the backend's assignedMechanicId points at this, not at the employee. */
+  registrationId?: string;
   currentBranch?: Branch;
 }
 

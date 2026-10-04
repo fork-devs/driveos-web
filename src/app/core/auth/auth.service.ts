@@ -124,7 +124,7 @@ export class AuthService {
 
   /**
    * Builds the Profile from the user (IAM) and the person record that Core keeps for them:
-   * OWNER -> manager, EMPLOYEE -> technician, CUSTOMER -> owner (vehicle owner).
+   * OWNER -> manager, EMPLOYEE -> manager (ADMINISTRATOR) or technician, CUSTOMER -> owner (vehicle owner).
    */
   private resolveProfile(userId: string): Observable<Profile> {
     return forkJoin({
@@ -178,13 +178,15 @@ export class AuthService {
     return this.http.get<PersonDto>(`${API_BASE}/employees`, { params: { userId: user.id } }).pipe(
       switchMap((employee) =>
         this.http
-          .get<EmployeeRegistrationDto[]>(`${API_BASE}/employee-registrations`, {
-            params: { employeeId: employee.id, status: 'ACTIVE' },
-          })
+          // By employeeId the backend answers with the single registration (404 when there is none), not an array.
+          .get<EmployeeRegistrationDto>(`${API_BASE}/employee-registrations`, { params: { employeeId: employee.id } })
           .pipe(
-            switchMap((regs) => {
-              const reg = regs[0];
-              const base = { ...this.base(user, employee, 'technician'), employeeId: employee.id };
+            catchError((e: HttpErrorResponse) => (e.status === 404 ? of(null) : throwError(() => e))),
+            switchMap((found) => {
+              const reg = found && found.status === 'ACTIVE' ? found : null;
+              // ADMINISTRATOR employees run the workshop (frontend role "manager"); everyone else is a technician.
+              const role: Role = reg?.speciality === 'ADMINISTRATOR' ? 'manager' : 'technician';
+              const base = { ...this.base(user, employee, role), employeeId: employee.id, registrationId: reg?.id };
               if (!reg) return of(base as Profile);
               return this.http.get<BranchDto>(`${API_BASE}/branches/${reg.branchId}`).pipe(
                 switchMap((branch) =>
