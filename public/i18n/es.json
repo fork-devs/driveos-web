@@ -1,0 +1,317 @@
+﻿{
+  "meta": {
+    "title": "DriveOS | Software para talleres automotrices",
+    "description": "DriveOS conecta el diagnóstico OBD-II, las órdenes de trabajo, el inventario y la facturación electrónica de tu taller en un solo sistema."
+  },
+  "loader": {
+    "label": "Cargando DriveOS"
+  },
+  "nav": {
+    "home": "Ir al inicio",
+    "how": "Cómo funciona",
+    "features": "Funciones",
+    "roles": "Roles",
+    "plans": "Planes",
+    "cta": "Solicitar demo",
+    "language": "Idioma",
+    "login": "Iniciar sesión"
+  },
+  "hero": {
+    "title": "Tu taller, un paso antes de la falla.",
+    "sub": "DriveOS lee el diagnóstico de cada vehículo, organiza las órdenes de trabajo y factura a SUNAT desde un solo sistema.",
+    "cta": "Solicitar demo",
+    "secondary": "Ver cómo funciona",
+    "sceneLabel": "Logo de DriveOS en 3D"
+  },
+  "problem": {
+    "statement": "El taller de hoy espera a que el auto falle. El de mañana ya lo sabe.",
+    "detail": "Órdenes en papel, repuestos que no aparecen y clientes que no vuelven. Un flujo digital lo ordena todo."
+  },
+  "how": {
+    "title": "De la señal a la factura",
+    "stepLabel": "Paso",
+    "steps": {
+      "0": {
+        "title": "Conecta el escáner",
+        "text": "Cualquier dispositivo OBD-II envía lecturas y códigos de falla al sistema."
+      },
+      "1": {
+        "title": "Recibe la alerta",
+        "text": "Las reglas detectan valores fuera de rango y avisan antes de la avería."
+      },
+      "2": {
+        "title": "Abre la orden",
+        "text": "El técnico registra tareas, fotos y tiempos, incluso sin conexión."
+      },
+      "3": {
+        "title": "Cobra y factura",
+        "text": "El repuesto se descuenta por lote y el comprobante sale a SUNAT."
+      }
+    }
+  },
+  "features": {
+    "title": "Todo el taller en un solo sistema",
+    "telemetry": {
+      "title": "Telemetría de cualquier escáner",
+      "text": "Lecturas PID y códigos DTC llegan en tiempo real, sin importar la marca del dispositivo OBD-II."
+    },
+    "evidence": {
+      "title": "Órdenes con evidencia",
+      "text": "Fotos inmutables en la recepción, la reparación y la entrega respaldan cada trabajo."
+    },
+    "fifo": {
+      "title": "Inventario FIFO",
+      "text": "Cada repuesto sale del lote más antiguo y el costo real queda registrado."
+    },
+    "sunat": {
+      "title": "Facturación SUNAT",
+      "text": "Boletas y facturas electrónicas desde la orden liquidada, en menos de 2 minutos."
+    },
+    "offline": {
+      "title": "Trabajo sin conexión",
+      "text": "El técnico sigue en la fosa aunque caiga internet. Todo se sincroniza al volver la señal."
+    }
+  },
+  "roles": {
+    "title": "Cada rol ve lo suyo",
+    "tabsLabel": "Roles del taller",
+    "manager": {
+      "tab": "Gestor del taller",
+      "lead": "Control total sin perseguir papeles.",
+      "items": {
+        "0": "Órdenes, agenda y bahías en un tablero",
+        "1": "Alertas preventivas por vehículo",
+        "2": "Inventario, costos y facturación"
+      }
+    },
+    "technician": {
+      "tab": "Técnico mecánico",
+      "lead": "Menos tecleo, más tiempo en el auto.",
+      "items": {
+        "0": "Tareas y tiempos desde el celular",
+        "1": "Fotos de evidencia en cada etapa",
+        "2": "Funciona sin conexión"
+      }
+    }
+  },
+  "trust": {
+    "title": "Diseñado para no parar",
+    "note": "Objetivos de diseño definidos en la arquitectura del proyecto.",
+    "items": {
+      "0": {
+        "value": "5.000",
+        "unit": "lecturas por segundo",
+        "text": "Las ráfagas de telemetría se absorben sin frenar la operación del taller."
+      },
+      "1": {
+        "value": "0",
+        "unit": "fugas entre talleres",
+        "text": "Cada taller accede solo a sus datos, con aislamiento por inquilino."
+      },
+      "2": {
+        "value": "30",
+        "unit": "minutos sin conexión",
+        "text": "Ningún registro se pierde durante el corte y todo se sincroniza al volver."
+      }
+    }
+  },
+  "plans": {
+    "title": "Un plan para cada taller",
+    "basic": {
+      "name": "Básico",
+      "text": "Una sede con órdenes, inventario y facturación electrónica.",
+      "items": {
+        "0": "Órdenes de trabajo digitales",
+        "1": "Inventario FIFO",
+        "2": "Facturación SUNAT"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "text": "Varias sedes, más usuarios y mayor volumen de telemetría.",
+      "items": {
+        "0": "Todo lo del plan Básico",
+        "1": "Alertas preventivas por vehículo",
+        "2": "Sedes y usuarios ampliados"
+      }
+    },
+    "cta": "Solicitar demo"
+  },
+  "team": {
+    "title": "Equipo ForkDevs",
+    "sub": "Cinco estudiantes de Ingeniería de Software de la UPC.",
+    "members": {
+      "0": {
+        "name": "Luis Daniel Granda Ibarra",
+        "role": "Datos y producto"
+      },
+      "1": {
+        "name": "Jorge Brayan Ayala Fernandez",
+        "role": "Arquitectura y fullstack"
+      },
+      "2": {
+        "name": "Aldo Jeanfranco Machacca Soto",
+        "role": "Backend y APIs"
+      },
+      "3": {
+        "name": "Rafael Barrenechea Bustamante",
+        "role": "Frontend y experiencia de usuario"
+      },
+      "4": {
+        "name": "Dalila Victoria Torres Sanchez",
+        "role": "Bases de datos y análisis"
+      }
+    }
+  },
+  "demo": {
+    "title": "Prueba DriveOS en tu taller",
+    "sub": "Déjanos tus datos y te mostramos el sistema con los procesos de tu taller.",
+    "name": "Nombre",
+    "email": "Correo",
+    "workshop": "Nombre del taller",
+    "submit": "Solicitar demo",
+    "errorRequired": "Completa este campo.",
+    "errorEmail": "Escribe un correo válido.",
+    "success": "Recibimos tu solicitud. Te escribiremos pronto."
+  },
+  "footer": {
+    "credit": "ForkDevs. Proyecto del curso 1ASI0657, UPC.",
+    "rights": "2026"
+  },
+  "auth": {
+    "common": {
+      "back": "Volver al inicio",
+      "show": "Mostrar contraseña",
+      "hide": "Ocultar contraseña",
+      "loading": "Un momento..."
+    },
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo",
+      "password": "Contraseña",
+      "newPassword": "Contraseña (mínimo 8 caracteres)"
+    },
+    "signIn": {
+      "title": "Inicia sesión",
+      "sub": "Entra al panel de tu taller.",
+      "submit": "Iniciar sesión",
+      "forgot": "Â¿Olvidaste tu contraseña?",
+      "noAccount": "Â¿Aún no tienes cuenta?",
+      "create": "Crear cuenta"
+    },
+    "signUp": {
+      "title": "Crea tu cuenta",
+      "sub": "Empieza con tus datos básicos. El taller se configura después.",
+      "submit": "Crear cuenta",
+      "hasAccount": "Â¿Ya tienes cuenta?",
+      "login": "Iniciar sesión",
+      "success": "Cuenta creada. Ya puedes iniciar sesión."
+    },
+    "forgot": {
+      "title": "Recupera tu contraseña",
+      "sub": "Escribe tu correo y te enviamos un enlace para restablecerla.",
+      "submit": "Enviar enlace",
+      "back": "Volver a iniciar sesión",
+      "success": "Si el correo existe, recibirás un enlace en unos minutos."
+    },
+    "errors": {
+      "required": "Completa este campo.",
+      "email": "Escribe un correo válido.",
+      "minlength": "Usa al menos 8 caracteres.",
+      "invalidCredentials": "Correo o contraseña incorrectos.",
+      "emailTaken": "Ese correo ya tiene una cuenta.",
+      "generic": "No pudimos completar la acción. Intenta de nuevo."
+    }
+  },
+  "app": {
+    "common": {
+      "loading": "Cargando",
+      "error": "No pudimos cargar los datos.",
+      "retry": "Reintentar",
+      "empty": "No hay datos para mostrar."
+    },
+    "role": {
+      "manager": "Gestor del taller",
+      "technician": "Técnico mecánico"
+    },
+    "nav": {
+      "overview": "Resumen",
+      "orders": "Órdenes",
+      "inventory": "Inventario",
+      "alerts": "Alertas",
+      "agenda": "Agenda",
+      "tasks": "Mis tareas", "billing": "Facturación"
+    },
+    "shell": {
+      "menu": "Menú principal",
+      "signOut": "Cerrar sesión",
+      "offline": "Sin conexión. Tus cambios se guardan y se envían al volver la señal.",
+      "pending": "Pendientes: {{count}}",
+      "syncing": "Sincronizando cambios ({{count}})"
+    },
+    "status": {
+      "OPEN": "Abierta",
+      "IN_PROGRESS": "En curso",
+      "WAITING_PARTS": "Esperando repuestos",
+      "COMPLETED": "Terminada",
+      "PAID": "Pagada",
+      "PENDING": "Pendiente",
+      "DONE": "Hecha",
+      "CONFIRMED": "Confirmada",
+      "medium": "Media",
+      "high": "Alta",
+      "critical": "Crítica",
+      "low": "Bajo mínimo",
+      "ok": "En stock"
+    },
+    "overview": {
+      "title": "Buen día, {{name}}",
+      "sub": "Esto necesita tu atención hoy.",
+      "open": "Órdenes abiertas",
+      "inProgress": "En curso",
+      "lowStock": "Repuestos bajo mínimo",
+      "alerts": "Alertas activas",
+      "byStatus": "Órdenes por estado",
+      "alertsTitle": "Alertas del parque",
+      "recent": "Órdenes recientes",
+      "seeAll": "Ver todas"
+    },
+    "orders": {
+      "title": "Órdenes de trabajo",
+      "sub": "Abre una orden para ver sus tareas y avanzarla.",
+      "filter": "Filtrar por estado",
+      "all": "Todas",
+      "empty": "No hay órdenes en este estado.",
+      "moveTo": "Pasar a {{status}}"
+    },
+    "inventory": {
+      "title": "Inventario",
+      "sub": "Los repuestos bajo el mínimo aparecen primero.",
+      "empty": "Aún no hay productos.",
+      "min": "mínimo {{min}}",
+      "fifo": "Lotes en orden FIFO",
+      "firstOut": "sale primero"
+    },
+    "alerts": {
+      "title": "Alertas de diagnóstico",
+      "sub": "Códigos de falla activos en tus vehículos, del más grave al menos.",
+      "empty": "Sin alertas activas. Todo en orden.",
+      "trend": "Temperatura del refrigerante: de {{from}} a {{to}} grados Celsius",
+      "coolant": "Refrigerante"
+    },
+    "agenda": {
+      "title": "Agenda de hoy",
+      "sub": "Citas confirmadas y en curso.",
+      "empty": "No hay citas para hoy."
+    },
+    "agenda": { "empty": "No hay citas programadas para hoy." }, "tasks": {
+      "title": "Mis tareas",
+      "sub": "Toca una tarea para empezar. Funciona sin conexión.",
+      "empty": "No tienes tareas asignadas.",
+      "photo": "Foto",
+      "photoAlt": "Evidencia de la tarea",
+      "start": "Empezar",
+      "finish": "Terminar"
+    }
+  }
+}

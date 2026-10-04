@@ -1,0 +1,43 @@
+@use '@angular/material' as mat;
+
+/* Angular Material 3 theme driven by the same data-theme switch as the DriveOS tokens.
+   theme-type: color-scheme emits light-dark() values, so the CSS color-scheme below picks the palette. */
+html {
+  @include mat.theme((
+    color: (
+      theme-type: color-scheme,
+      primary: mat.$azure-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    typography: (
+      plain-family: 'Figtree Variable, Figtree, system-ui, sans-serif',
+      brand-family: 'Figtree Variable, Figtree, system-ui, sans-serif',
+      bold-weight: 750,
+    ),
+    density: 0,
+  ));
+}
+
+html[data-theme='light'] { color-scheme: light; }
+html[data-theme='dark'] { color-scheme: dark; }
+
+html[data-theme='light'] { --mat-sys-on-primary: #ffffff; }
+/* Dark: light-blue fill with dark text keeps button contrast above 4.5:1. */
+html[data-theme='dark'] { --mat-sys-primary: var(--c-primary-soft); --mat-sys-on-primary: #00263d; }
+
+/* Pin Material surfaces to the DriveOS palette so both look like one system. */
+html[data-theme='light'] {
+  --mat-sys-primary: var(--c-primary);
+}
+
+html {
+  --mat-sys-surface: var(--card);
+  --mat-sys-surface-container: var(--card);
+  --mat-sys-surface-container-low: var(--card-nested);
+  --mat-sys-surface-container-high: var(--card);
+  --mat-sys-surface-container-highest: var(--card-nested);
+  --mat-sys-on-surface: var(--fg);
+  --mat-sys-on-surface-variant: var(--muted);
+  --mat-sys-outline: var(--line-strong);
+  --mat-sys-outline-variant: var(--line);
+}

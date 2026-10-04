@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "title": "DriveOS | Software for auto repair shops",
+    "description": "DriveOS connects OBD-II diagnostics, work orders, inventory and electronic invoicing for your shop in a single system."
+  },
+  "loader": {
+    "label": "Loading DriveOS"
+  },
+  "nav": {
+    "home": "Go to top",
+    "how": "How it works",
+    "features": "Features",
+    "roles": "Roles",
+    "plans": "Plans",
+    "cta": "Request a demo",
+    "language": "Language",
+    "login": "Sign in"
+  },
+  "hero": {
+    "title": "Your shop, one step ahead of the failure.",
+    "sub": "DriveOS reads each vehicle's diagnostics, organizes work orders and invoices SUNAT from one system.",
+    "cta": "Request a demo",
+    "secondary": "See how it works",
+    "sceneLabel": "DriveOS logo in 3D"
+  },
+  "problem": {
+    "statement": "Today's shop waits for the car to fail. Tomorrow's shop already knows.",
+    "detail": "Paper orders, missing parts and customers who never return. One digital flow puts it all in order."
+  },
+  "how": {
+    "title": "From signal to invoice",
+    "stepLabel": "Step",
+    "steps": {
+      "0": {
+        "title": "Plug in the scanner",
+        "text": "Any OBD-II device sends readings and fault codes to the system."
+      },
+      "1": {
+        "title": "Get the alert",
+        "text": "Rules detect out-of-range values and warn you before the breakdown."
+      },
+      "2": {
+        "title": "Open the order",
+        "text": "The technician logs tasks, photos and time, even without a connection."
+      },
+      "3": {
+        "title": "Charge and invoice",
+        "text": "Parts are deducted by batch and the receipt goes out to SUNAT."
+      }
+    }
+  },
+  "features": {
+    "title": "The whole shop in one system",
+    "telemetry": {
+      "title": "Telemetry from any scanner",
+      "text": "PID readings and DTC codes arrive in real time, whatever the brand of the OBD-II device."
+    },
+    "evidence": {
+      "title": "Orders with evidence",
+      "text": "Immutable photos at intake, repair and delivery back up every job."
+    },
+    "fifo": {
+      "title": "FIFO inventory",
+      "text": "Each part leaves from the oldest batch and the real cost is recorded."
+    },
+    "sunat": {
+      "title": "SUNAT invoicing",
+      "text": "Electronic receipts and invoices from the settled order, in under 2 minutes."
+    },
+    "offline": {
+      "title": "Work offline",
+      "text": "The technician keeps working in the pit when the internet drops. Everything syncs when the signal returns."
+    }
+  },
+  "roles": {
+    "title": "Each role sees its own",
+    "tabsLabel": "Shop roles",
+    "manager": {
+      "tab": "Shop manager",
+      "lead": "Full control without chasing paperwork.",
+      "items": {
+        "0": "Orders, schedule and bays on one board",
+        "1": "Preventive alerts per vehicle",
+        "2": "Inventory, costs and invoicing"
+      }
+    },
+    "technician": {
+      "tab": "Mechanic",
+      "lead": "Less typing, more time on the car.",
+      "items": {
+        "0": "Tasks and time from the phone",
+        "1": "Evidence photos at every stage",
+        "2": "Works without a connection"
+      }
+    }
+  },
+  "trust": {
+    "title": "Built to keep running",
+    "note": "Design targets defined in the project architecture.",
+    "items": {
+      "0": {
+        "value": "5,000",
+        "unit": "readings per second",
+        "text": "Telemetry bursts are absorbed without slowing down the shop's operation."
+      },
+      "1": {
+        "value": "0",
+        "unit": "leaks between shops",
+        "text": "Each shop reaches only its own data, with tenant isolation."
+      },
+      "2": {
+        "value": "30",
+        "unit": "minutes offline",
+        "text": "No record is lost during the outage and everything syncs on return."
+      }
+    }
+  },
+  "plans": {
+    "title": "A plan for every shop",
+    "basic": {
+      "name": "Basic",
+      "text": "One location with orders, inventory and electronic invoicing.",
+      "items": {
+        "0": "Digital work orders",
+        "1": "FIFO inventory",
+        "2": "SUNAT invoicing"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "text": "Several locations, more users and higher telemetry volume.",
+      "items": {
+        "0": "Everything in Basic",
+        "1": "Preventive alerts per vehicle",
+        "2": "Expanded locations and users"
+      }
+    },
+    "cta": "Request a demo"
+  },
+  "team": {
+    "title": "The ForkDevs team",
+    "sub": "Five Software Engineering students at UPC.",
+    "members": {
+      "0": {
+        "name": "Luis Daniel Granda Ibarra",
+        "role": "Data and product"
+      },
+      "1": {
+        "name": "Jorge Brayan Ayala Fernandez",
+        "role": "Architecture and fullstack"
+      },
+      "2": {
+        "name": "Aldo Jeanfranco Machacca Soto",
+        "role": "Backend and APIs"
+      },
+      "3": {
+        "name": "Rafael Barrenechea Bustamante",
+        "role": "Frontend and user experience"
+      },
+      "4": {
+        "name": "Dalila Victoria Torres Sanchez",
+        "role": "Databases and analysis"
+      }
+    }
+  },
+  "demo": {
+    "title": "Try DriveOS in your shop",
+    "sub": "Leave your details and we will show you the system running your shop's processes.",
+    "name": "Name",
+    "email": "Email",
+    "workshop": "Shop name",
+    "submit": "Request a demo",
+    "errorRequired": "Fill in this field.",
+    "errorEmail": "Enter a valid email.",
+    "success": "We got your request. We will write to you soon."
+  },
+  "footer": {
+    "credit": "ForkDevs. Course project 1ASI0657, UPC.",
+    "rights": "2026"
+  },
+  "auth": {
+    "common": {
+      "back": "Back to home",
+      "show": "Show password",
+      "hide": "Hide password",
+      "loading": "One moment..."
+    },
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "newPassword": "Password (at least 8 characters)"
+    },
+    "signIn": {
+      "title": "Sign in",
+      "sub": "Enter your shop's dashboard.",
+      "submit": "Sign in",
+      "forgot": "Forgot your password?",
+      "noAccount": "Don't have an account yet?",
+      "create": "Create account"
+    },
+    "signUp": {
+      "title": "Create your account",
+      "sub": "Start with your basic details. The shop is set up later.",
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in",
+      "success": "Account created. You can sign in now."
+    },
+    "forgot": {
+      "title": "Recover your password",
+      "sub": "Enter your email and we will send you a link to reset it.",
+      "submit": "Send link",
+      "back": "Back to sign in",
+      "success": "If the email exists, you will get a link in a few minutes."
+    },
+    "errors": {
+      "required": "Fill in this field.",
+      "email": "Enter a valid email.",
+      "minlength": "Use at least 8 characters.",
+      "invalidCredentials": "Wrong email or password.",
+      "emailTaken": "That email already has an account.",
+      "generic": "We could not complete the action. Try again."
+    }
+  },
+  "app": {
+    "common": {
+      "loading": "Loading",
+      "error": "We could not load the data.",
+      "retry": "Try again",
+      "empty": "Nothing to show."
+    },
+    "role": {
+      "manager": "Shop manager",
+      "technician": "Mechanic"
+    },
+    "nav": {
+      "overview": "Overview",
+      "orders": "Orders",
+      "inventory": "Inventory",
+      "alerts": "Alerts",
+      "agenda": "Schedule",
+      "tasks": "My tasks", "billing": "Billing"
+    },
+    "shell": {
+      "menu": "Main menu",
+      "signOut": "Sign out",
+      "offline": "You are offline. Your changes are saved and sent when the signal returns.",
+      "pending": "Pending: {{count}}",
+      "syncing": "Syncing changes ({{count}})"
+    },
+    "status": {
+      "OPEN": "Open",
+      "IN_PROGRESS": "In progress",
+      "WAITING_PARTS": "Waiting for parts",
+      "COMPLETED": "Completed",
+      "PAID": "Paid",
+      "PENDING": "Pending",
+      "DONE": "Done",
+      "CONFIRMED": "Confirmed",
+      "medium": "Medium",
+      "high": "High",
+      "critical": "Critical",
+      "low": "Below minimum",
+      "ok": "In stock"
+    },
+    "overview": {
+      "title": "Good day, {{name}}",
+      "sub": "This needs your attention today.",
+      "open": "Open orders",
+      "inProgress": "In progress",
+      "lowStock": "Parts below minimum",
+      "alerts": "Active alerts",
+      "byStatus": "Orders by status",
+      "alertsTitle": "Fleet alerts",
+      "recent": "Recent orders",
+      "seeAll": "See all"
+    },
+    "orders": {
+      "title": "Work orders",
+      "sub": "Open an order to see its tasks and move it forward.",
+      "filter": "Filter by status",
+      "all": "All",
+      "empty": "No orders in this status.",
+      "moveTo": "Move to {{status}}"
+    },
+    "inventory": {
+      "title": "Inventory",
+      "sub": "Parts below their minimum show first.",
+      "empty": "No products yet.",
+      "min": "minimum {{min}}",
+      "fifo": "Batches in FIFO order",
+      "firstOut": "goes out first"
+    },
+    "alerts": {
+      "title": "Diagnostic alerts",
+      "sub": "Active fault codes across your vehicles, most severe first.",
+      "empty": "No active alerts. All clear.",
+      "trend": "Coolant temperature: from {{from}} to {{to}} degrees Celsius",
+      "coolant": "Coolant"
+    },
+    "agenda": {
+      "title": "Today's schedule",
+      "sub": "Confirmed and ongoing appointments.",
+      "empty": "No appointments today."
+    },
+    "agenda": { "empty": "No appointments scheduled for today." }, "tasks": {
+      "title": "My tasks",
+      "sub": "Tap a task to start. Works offline.",
+      "empty": "You have no assigned tasks.",
+      "photo": "Photo",
+      "photoAlt": "Task evidence",
+      "start": "Start",
+      "finish": "Finish"
+    }
+  }
+}
