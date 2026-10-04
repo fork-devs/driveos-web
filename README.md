@@ -5,23 +5,55 @@ Frontend of DriveOS Workshop (ForkDevs, course 1ASI0657). Angular 21, SCSS token
 ## Run
 
 ```bash
-npm install
-npm start          # http://localhost:4200
-npm run build      # production build in dist/
+npm ci
+npm start                 # dev server http://localhost:4200, mock API on, /api proxied to :8080
+npm run build             # production build in dist/, mock API off, talks to the real gateway
 ```
 
-## Test (with the dev server running)
+## Configuration
+
+| Setting | Where | Default (dev / prod) |
+|---|---|---|
+| `apiBase` | `src/environments/environment*.ts` | `/api/v1` / `/api/v1` (relative, or an absolute gateway URL) |
+| `useMocks` | `src/environments/environment*.ts` | `true` / `false` |
+| `?mock` or `?mock=0` | URL, per tab (kept in sessionStorage) | overrides `useMocks`, also in a production build |
+| dev proxy | `proxy.conf.json` | `/api` to `http://localhost:8080` (the gateway) |
+
+`ng serve` and `ng build --configuration development` use `environment.development.ts`; the production build uses `environment.ts`.
+
+## Run against the real backend
+
+1. Start the platform (repo `plat-ref`): the API Gateway listens on `:8080` and routes `/api/v1/**` to the services.
+2. `npm start`, then open `http://localhost:4200/?mock=0` (the proxy forwards `/api` to the gateway, so there is no CORS).
+3. Sign in with a user that has a Core profile (owner or employee). The role comes from `GET /profiles/roles`: OWNER shows the manager screens, EMPLOYEE the technician screens.
+
+Production: `apiBase` is relative, so the host must send `/api/*` to the gateway. On Vercel add a rewrite before the SPA fallback in `vercel.json` (it cannot read env vars, so the URL is written in the file):
+
+```json
+{ "source": "/api/:path*", "destination": "https://YOUR-GATEWAY-HOST/api/:path*" }
+```
+
+Or set `apiBase` to the absolute gateway URL in `environment.ts` and enable CORS on the gateway.
+
+Session: the gateway issues one JWT (no refresh token). It is kept with the profile in sessionStorage, dropped when it expires, and any 401 from the API signs the user out.
+
+## Backend mapping
+
+`src/app/domain/backend.ts` holds the JSON shapes of the Spring resources, `mappers.ts` turns them into the view models the screens use, and `lookups.ts` resolves ids owned by other services (vehicle, customer, employee, product). Every list is scoped by the selected branch (`BranchContext`).
+
+Not in the backend yet, so the UI degrades: changing a work order status (derived from its tasks), clearing a DTC alert, battery / engine load / oil pressure gauges, bay numbers, voucher and quote dates, a sign-up name (the user resource takes only email and password), and a reset-password screen (`POST /authentication/password-resets` is not wired to a page).
+
+## Test (with the dev server running; uses the mock API)
 
 ```bash
-npm run e2e        # 16 behaviour checks: validation, i18n, role guards, order flow, offline queue
+npm run e2e        # 18 behaviour checks: validation, i18n, role guards, order flow, offline queue
 npm run a11y       # axe scan (WCAG 2.1 AA) on landing, sign-in and manager screens, light and dark
 npm run shots      # screenshots of every screen in e2e/out (needs `npx playwright install chromium` once)
 ```
 
-## Try the app
+## Try the app with mocks
 
-The backend does not exist yet, so `src/app/core/api/mock-api.interceptor.ts` answers the API.
-Turn it off with `USE_MOCKS = false` in `src/app/core/config.ts`.
+With `useMocks` on, `src/app/core/api/mock-api.interceptor.ts` answers the API.
 
 | Sign in with | Result |
 |---|---|
@@ -45,11 +77,6 @@ public/
   brand/       logo SVGs and patterns
   i18n/        es.json, en.json
 ```
-
-## Endpoints the mock uses that are not yet in endpoints.md
-
-`GET /tasks?assignee=me`, `PATCH /tasks/{id}/status` (idempotent by `Idempotency-Key`), `GET /vehicles/dtc-alerts`.
-Add them to the API contract before building the services.
 
 ## Últimas Modificaciones (Registro de Cambios)
 
