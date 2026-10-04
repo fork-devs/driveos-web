@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
@@ -7,8 +7,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { AuthService } from '../../core/auth/auth.service';
 import { OfflineSyncService } from '../../core/offline/offline-sync.service';
-import { branches } from '../../core/api/mock-data';
+import { BranchContext } from '../../core/branch/branch-context.service';
 import { Branch } from '../../domain/models';
+
+const NO_BRANCH: Branch = { id: '', name: '—', code: '', address: '', phone: '', activeBays: 0 };
 import { LangSwitchComponent } from '../../shared/lang-switch.component';
 import { LogoComponent } from '../../shared/logo.component';
 import { ThemeToggleComponent } from '../../shared/theme-toggle.component';
@@ -90,7 +92,7 @@ const TECHNICIAN_NAV: NavItem[] = [
               <div class="popover-header" (click)="$event.stopPropagation()">
                 <span>Seleccionar sucursal</span>
               </div>
-              @for (b of allBranches; track b.id) {
+              @for (b of allBranches(); track b.id) {
                 <button mat-menu-item (click)="selectBranch(b)" [class.active]="selectedBranch().id === b.id">
                   <div class="option-content">
                     <strong>{{ b.name }}</strong>
@@ -572,8 +574,9 @@ export class AppShellComponent {
   private readonly auth = inject(AuthService);
   private readonly router = inject(Router);
 
-  protected readonly allBranches = branches;
-  protected readonly selectedBranch = signal<Branch>(branches[0]);
+  private readonly branchCtx = inject(BranchContext);
+  protected readonly allBranches = this.branchCtx.branches;
+  protected readonly selectedBranch = computed(() => this.branchCtx.selected() ?? NO_BRANCH);
 
   protected readonly profile = this.auth.profile;
   protected readonly items = computed(() =>
@@ -581,7 +584,7 @@ export class AppShellComponent {
   );
 
   protected selectBranch(b: Branch): void {
-    this.selectedBranch.set(b);
+    this.branchCtx.select(b);
   }
 
   protected getInitials(name?: string): string {
