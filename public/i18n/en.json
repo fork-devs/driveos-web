@@ -235,6 +235,7 @@
       "technician": "Mechanic"
     },
     "nav": {
+      "preventiveAlerts": "Preventive alerts",
       "overview": "Overview",
       "orders": "Orders",
       "inventory": "Inventory",

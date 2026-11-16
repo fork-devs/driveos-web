@@ -40,6 +40,11 @@ export const routes: Routes = [
         loadComponent: () => import('./features/iot/telemetry.page').then((m) => m.TelemetryPage),
       },
       {
+        path: 'preventive-alerts',
+        canActivate: [roleGuard('manager')],
+        loadComponent: () => import('./features/manager/alerts.page').then((m) => m.AlertsPage),
+      },
+      {
         path: 'alerts',
         redirectTo: 'telemetry',
         pathMatch: 'full',
