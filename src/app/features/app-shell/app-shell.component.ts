@@ -6,6 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { AuthService } from '../../core/auth/auth.service';
+import { USE_MOCKS } from '../../core/config';
 import { OfflineSyncService } from '../../core/offline/offline-sync.service';
 import { BranchContext } from '../../core/branch/branch-context.service';
 import { Branch } from '../../domain/models';
@@ -25,6 +26,7 @@ const MANAGER_NAV: NavItem[] = [
   { path: 'overview', key: 'overview', icon: 'ph-squares-four' },
   { path: 'orders', key: 'orders', icon: 'ph-clipboard-text' },
   { path: 'telemetry', key: 'alerts', icon: 'ph-broadcast' },
+  ...(USE_MOCKS ? [] : [{ path: 'preventive-alerts', key: 'preventiveAlerts', icon: 'ph-warning-circle' }]),
   { path: 'inventory', key: 'inventory', icon: 'ph-package' },
   { path: 'billing', key: 'billing', icon: 'ph-receipt' },
   { path: 'agenda', key: 'agenda', icon: 'ph-calendar-blank' },

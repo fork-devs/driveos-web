@@ -235,6 +235,7 @@
       "technician": "Técnico mecánico"
     },
     "nav": {
+      "preventiveAlerts": "Alertas preventivas",
       "overview": "Resumen",
       "orders": "Órdenes",
       "inventory": "Inventario",
